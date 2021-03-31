@@ -1,7 +1,14 @@
 import { Gestures } from './gestures';
+import { Rules } from './rules';
 
 export class Game {
-    play(_playerOneGesture: Gestures, _playerTwoGesture: Gestures): Gestures {
-        return Gestures.Rock;
+    private readonly rules: Rules;
+
+    constructor() {
+        this.rules = new Rules();
+    }
+
+    play(playerOneGesture: Gestures, playerTwoGesture: Gestures): Gestures {
+        return this.rules.winner(playerOneGesture, playerTwoGesture);
     }
 }

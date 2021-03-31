@@ -17,4 +17,7 @@ describe('RockPaperScissors Game', (): void => {
     it('when the first user chose scissors and the second chose paper then the first player should win', (): void => {
         expect(sut.play(Gestures.Scissors, Gestures.Paper)).toEqual(Gestures.Scissors);
     });
+    it('when the first user chose paper and the second chose scissors then the second player should win', (): void => {
+        expect(sut.play(Gestures.Paper, Gestures.Scissors)).toEqual(Gestures.Scissors);
+    });
 });
